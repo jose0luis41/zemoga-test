@@ -1,0 +1,63 @@
+<div class="container-parent">
+  <div *ngIf="isListLayout === false" class="container-result">
+    <mat-icon *ngIf="percentageUp.percentage >= percentageDown.percentage" class="icon-result up" >thumb_up</mat-icon>
+    <mat-icon *ngIf="percentageUp.percentage < percentageDown.percentage" class="icon-result down">thumb_down</mat-icon>
+  </div>
+
+  <div [fxLayout]="isListLayout === true ? 'row': 'column'">
+<!--
+    <p fxHide.lt-md>wkeodfmer</p>
+-->
+    <div>
+      <h4 [ngClass]="{'h4-tablet': isListLayout === true, 'h4-normal' : isListLayout === false }">
+        {{candidateName}} {{candidateLastName}}</h4>
+      <p class="p-description" [ngStyle]="{'width': isListLayout === true ? '105%' : '', 'font-size': isListLayout === true ? '18px' : '' }">
+        {{candidateDescription}}
+      </p>
+    </div>
+
+    <div class="container-buttons">
+      <div class="container-topic" [ngStyle]="{'margin': isListLayout === true ? '8px 14px 12px 0' : '' }">
+        <p *ngIf="!votePressed" class="p-date" [ngStyle]="{'margin-bottom': isListLayout === true ? '0' : '' }">1 month ago </p>
+        <p *ngIf="!votePressed" class="p-topic" [ngStyle]="{'margin-bottom': isListLayout === true ? '0' : '' }"> in {{candidateTopic}}</p>
+        <p *ngIf="votePressed" class="p-date" [ngStyle]="{'margin-bottom': isListLayout === true ? '0' : '' }">Thank you for your vote!</p>
+      </div>
+      <div class="container-thumb">
+        <mat-icon *ngIf="!votePressed" (click)="setButtonStyle($event, true)"
+                  [ngStyle]="{'border': candidateThumpUpPressed == true ? '2px solid' : 'none',
+          'borderColor': candidateThumpUpPressed == true ? 'white' : 'none',
+          'font-size': isListLayout === true ? '24px' : '',
+          'height': isListLayout === true ? '45px' : '',
+          'width': isListLayout === true ? '45px' : '',
+          'line-height': isListLayout === true ? '45px' : ''}"
+                  class="thumb-up" >thumb_up</mat-icon>
+      </div>
+
+      <div class="container-thumb">
+        <mat-icon *ngIf="!votePressed" (click)="setButtonStyle($event, false)"
+                  [ngStyle]="{'border': candidateThumpDownPressed == true ? '2px solid' : 'none',
+          'borderColor': candidateThumpDownPressed == true ? 'white' : 'none',
+          'font-size': isListLayout === true ? '24px' : '',
+          'height': isListLayout === true ? '45px' : '',
+          'width': isListLayout === true ? '45px' : '',
+          'line-height': isListLayout === true ? '45px' : ''}"
+                  class="thumb-down">thumb_down</mat-icon>
+      </div>
+
+      <button *ngIf="!votePressed" (click)="vote($event)"
+              [ngStyle]="{'margin': isListLayout === true ? '0 11px 0 12px' : '',
+                   'height': isListLayout === true ? '' : ''}"
+              class="vote" mat-raised-button >
+        Vote now
+      </button>
+      <button *ngIf="votePressed" (click)="voteAgain($event)"
+              [ngStyle]="{'margin': isListLayout === true ? '0 11px 0 12px' : '',
+                    'height': isListLayout === true ? '' : ''}"
+              class="vote" mat-raised-button>
+        Vote again
+      </button>
+
+    </div>
+  </div>
+
+</div>

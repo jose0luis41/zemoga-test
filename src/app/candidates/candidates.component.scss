@@ -1,0 +1,91 @@
+// Media Query Variables
+$breakpoint-xs: 600px;
+$breakpoint-sm: 960px;
+$breakpoint-md: 1280px;
+$breakpoint-md-1: 1377px;
+$breakpoint-md-2: 1438px;
+$breakpoint-lg: 1920px;
+$breakpoint-break-margin: 1100px;
+
+.container-candidates{
+  flex-wrap: wrap;
+  margin: 0 170px 0 170px;
+  justify-content: center;
+
+  @media (max-width: $breakpoint-break-margin) {
+    margin: 0 27px 27px 0;
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: unset;
+  }
+
+  .app-candidate{
+    margin: 0 27px 27px 0;
+
+    @media (max-width: $breakpoint-xs) {
+      margin: 0 12px;
+      flex: 0 0 auto;
+    }
+  }
+
+  app-candidate:nth-child(3n){
+    margin-right: 0px;
+
+    @media (max-width: $breakpoint-md-1) {
+      margin-right: 27px;
+    }
+  }
+
+  app-candidate:nth-child(3n){
+    @media (max-width: $breakpoint-break-margin) {
+      margin-right: 27px;
+    }
+  }
+
+  app-candidate:nth-child(2n){
+    @media (max-width: $breakpoint-break-margin) {
+      margin-right: 0px;
+    }
+  }
+
+
+}
+
+
+.selector{
+  margin: 0 170px  28px 170px;
+
+  @media (max-width: $breakpoint-break-margin) {
+    margin: 0 21px 28px 24px;
+  }
+
+  mat-form-field{
+    text-align: center;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13.5px;
+    text-align: center;
+    color: #333333;
+    //border-style: solid;
+  }
+
+
+
+  p{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #464646;
+    margin: 0;
+  }
+}
+
+
+

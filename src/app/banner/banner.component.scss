@@ -1,0 +1,16 @@
+div{
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../../assets/papodesktop.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  height:650px;
+  width: auto;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  position: relative;
+
+  @media only screen and (max-width: 1000px) {
+    height:350px;
+  }
+}

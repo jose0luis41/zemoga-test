@@ -1,0 +1,60 @@
+.div-wrapper {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  @media only screen and (max-width: 600px) {
+    .div-wrapper {
+      display: block; } }
+
+.div-container-header {
+  display: flex;
+  position: absolute;
+  justify-content: space-between;
+  top: 0px;
+  height: 50px;
+  width: 74%;
+  margin-top: 30px; }
+  @media only screen and (max-width: 1000px) {
+    .div-container-header {
+      margin-top: 0px; } }
+  @media only screen and (max-width: 600px) {
+    .div-container-header {
+      display: block; } }
+  .div-container-header div {
+    display: flex; }
+    .div-container-header div .mat-icon {
+      color: white;
+      margin-right: 20px;
+      margin-left: 20px;
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 27px; }
+  .div-container-header .p-thumb {
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px;
+    font-size: 28px;
+    margin-top: 8px;
+    font-weight: 600; }
+    @media only screen and (max-width: 600px) {
+      .div-container-header .p-thumb {
+        margin-bottom: 0;
+        margin-left: 36px;
+        margin-top: 20px; } }
+  @media only screen and (max-width: 600px) {
+    .div-container-header .container-links {
+      display: block;
+      width: 100%;
+      margin-left: 36px; } }
+  .div-container-header .container-links .p-links {
+    color: white;
+    margin-right: 20px;
+    margin-left: 20px; }
+    @media only screen and (max-width: 600px) {
+      .div-container-header .container-links .p-links {
+        margin-bottom: -13px;
+        margin-right: 0;
+        margin-left: 0; } }
+
+/*# sourceMappingURL=header.component.css.map */

@@ -1,0 +1,22 @@
+<div>
+  <app-advertasing></app-advertasing>
+
+  <div class="selector" fxHide.xs fxLayout="row" fxLayoutAlign="space-between center">
+    <p>Previous Rulings</p>
+
+    <mat-form-field *ngIf="options.length>0" appearance="fill">
+      <mat-select [(ngModel)]="valueSelected">
+        <mat-option *ngFor="let option of options" [value]="option.name" (click)="getCurrentOption()">
+          {{option.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div [fxShow]="!showListView" fxLayout="row" fxLayout.xs="row" fxShow.xs class="container-candidates">
+      <app-candidate fxFlex.xs="100" fxFlex.gt-xs="40" fxFlex.md="46" fxFlex.gt-md="31.6" class="app-candidate" *ngFor="let candidate of candidates" (candidateUpdated) = "getCandidateUpdated($event)" [Candidate]= candidate></app-candidate>
+  </div>
+  <div *ngIf="showListView" fxLayout="column" fxHide.xs class="container-candidates" >
+    <app-candidate-tablet fxFlex="100" *ngFor="let candidate of candidates" (candidateUpdated) = "getCandidateUpdated($event)" [Candidate]= candidate></app-candidate-tablet>
+  </div>
+</div>
+

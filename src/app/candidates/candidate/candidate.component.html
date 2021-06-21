@@ -1,0 +1,26 @@
+<div fxFlex="100" class="wrapper">
+  <div class="div-container" [ngStyle]="{background: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../../assets/' + candidate.url + ')'}">
+    <app-candidate-details (sendVote)="receiveVote($event)"
+                           [candidateThumpDownPressed] = candidate.thumDownPressed
+                           [candidateThumpUpPressed] = candidate.thumUpPressed
+                           [candidateTopic]= candidate.topic
+                           [candidateName]= candidate.name
+                           [candidateLastName]= candidate.lastname
+                           [candidateDescription]= candidate.description
+                           [percentageUp] = thumbUp
+                           [percentageDown] = thumbDown
+                           [isListLayout] = false>
+
+    </app-candidate-details>
+    <app-percentage [percentageUp] = thumbUp
+                    [percentageDown] = thumbDown
+                    [height]= 36
+                    [fontSize]= 18
+                    [lineHeight]= 36
+                    [fontSizeThumb]= 18
+                    [lineHeightThumb]= 36>
+
+    </app-percentage>
+  </div>
+</div>
+

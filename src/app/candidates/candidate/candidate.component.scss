@@ -1,0 +1,30 @@
+// Media Query Variables
+$breakpoint-xs: 600px;
+$breakpoint-sm: 960px;
+$breakpoint-md: 1280px;
+$breakpoint-md-1: 1437px;
+$breakpoint-md-2: 1438px;
+$breakpoint-lg: 1920px;
+
+.wrapper{
+  display: inline-block;
+}
+
+.div-container{
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  min-height: 348px;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: $breakpoint-xs) {
+    min-width: 362px;
+  }
+}
+
+.wrapper div:nth-child(3n) {
+  margin-right: 0px;
+}
+
+

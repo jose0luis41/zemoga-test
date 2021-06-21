@@ -1,0 +1,22 @@
+.container-candidates {
+  flex-flow: wrap;
+  display: flex;
+  justify-content: center; }
+  .container-candidates div {
+    margin-right: 40px;
+    margin-bottom: 40px; }
+    @media only screen and (max-width: 916px) {
+      .container-candidates div {
+        margin-right: 0; } }
+  .container-candidates div:first-of-type {
+    margin-left: 40px; }
+    @media only screen and (max-width: 1035px) {
+      .container-candidates div:first-of-type {
+        margin-left: 0; } }
+  .container-candidates div:nth-child(3) {
+    margin-left: 40px; }
+    @media only screen and (max-width: 1035px) {
+      .container-candidates div:nth-child(3) {
+        margin-left: 0; } }
+
+/*# sourceMappingURL=candidates.component.css.map */

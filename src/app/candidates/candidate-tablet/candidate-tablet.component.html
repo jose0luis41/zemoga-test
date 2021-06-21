@@ -1,0 +1,32 @@
+<div class="container-candidates-tablet">
+  <div fxLayout="row" class="container-info">
+    <div class="div-image" [ngStyle]="{background: 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../../assets/' + candidate.urlTablet + ')'}">
+      <div class="container-result">
+        <mat-icon *ngIf="thumbUp.percentage >= thumbDown.percentage" class="icon-result up" >thumb_up</mat-icon>
+        <mat-icon *ngIf="thumbUp.percentage < thumbDown.percentage" class="icon-result down">thumb_down</mat-icon>
+      </div>
+    </div>
+
+    <app-candidate-details (sendVote)="receiveVote($event)"
+                           [candidateThumpDownPressed] = candidate.thumDownPressed
+                           [candidateThumpUpPressed] = candidate.thumUpPressed
+                           [candidateTopic]= candidate.topic
+                           [candidateName]= candidate.name
+                           [candidateLastName]= candidate.lastname
+                           [candidateDescription]= candidate.description
+                           [percentageUp] = thumbUp
+                           [percentageDown] = thumbDown
+                           [isListLayout] = true>
+
+    </app-candidate-details>
+  </div>
+
+<app-percentage [percentageUp] = thumbUp
+                  [percentageDown] = thumbDown
+                  [height]= 54
+                  [fontSize]= 27
+                  [lineHeight]= 54
+                  [fontSizeThumb]= 23
+                  [lineHeightThumb]= 54>
+  </app-percentage>
+</div>

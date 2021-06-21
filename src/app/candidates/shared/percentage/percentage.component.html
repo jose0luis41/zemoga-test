@@ -1,0 +1,18 @@
+<div class="div-bar" [ngStyle]="{'background': percentageUp.value > percentageDown.value || percentageUp.value === percentageDown.value ?
+'linear-gradient(to right, rgb(27, 171, 166, 0.7) '+ percentageUp.percentage +'%, rgb(242, 168, 40, 0.7) '+percentageDown.percentage+'%)' :
+'linear-gradient(to left, rgb(242, 168, 40, 0.7) '+ percentageDown.percentage +'%, rgb(27, 171, 166, 0.7) '+percentageUp.percentage+'%)',
+'height': height+'px'}">
+  <div class="container-percentage">
+    <div class="percentage-value">
+      <mat-icon [ngStyle]="{'height': fontSizeThumb +'px', 'width': fontSizeThumb +'px', 'fontSize': fontSizeThumb +'px', 'lineHeight': lineHeightThumb +'px'}" class="mat-icon-left">thumb_up</mat-icon>
+      <p [ngStyle]="{'fontSize': fontSize +'px', 'lineHeight': lineHeight +'px'}" class="p-thumb-up">{{percentageUp.value}}%</p>
+    </div>
+
+    <div class="percentage-value">
+      <p [ngStyle]="{'fontSize': fontSize +'px', 'lineHeight': lineHeight +'px'}" class="p-thumb-down">{{percentageDown.value}}%</p>
+      <mat-icon [ngStyle]="{'height': fontSizeThumb +'px', 'width': fontSizeThumb +'px', 'fontSize': fontSizeThumb +'px', 'lineHeight': lineHeightThumb +'px'}">thumb_down</mat-icon>
+    </div>
+  </div>
+
+</div>
+
